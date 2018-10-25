@@ -1366,6 +1366,9 @@ var ViewModel = /** @class */ (function () {
         var pathToHarness = "/resources/";
         try {
             pathToHarness = prompt("Enter the path to the testharness folder", pathToHarness);
+            if (pathToHarness == null) { // User cancelled
+                return;
+            }
             if (pathToHarness && !/\/$/.test(pathToHarness)) {
                 pathToHarness += '/';
             }
